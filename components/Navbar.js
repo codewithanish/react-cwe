@@ -88,12 +88,11 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a
-                href="#"
-                className="bg-[#00BFA6] text-white rounded-lg px-2 py-1"
-              >
-                Login
-              </a>
+              <Link href="login">
+                <a className="bg-[#00BFA6] text-white rounded-lg px-2 py-1">
+                  Login
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
