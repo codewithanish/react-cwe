@@ -1,32 +1,103 @@
-import { TerminalIcon } from "@heroicons/react/solid";
-import Link from "next/link";
+import { LockClosedIcon } from "@heroicons/react/solid";
 
-export default function Login() {
+export default function Register() {
   return (
-    <body className="h-screen dark:bg-slate-800">
-      <div className="mx-auto h-full flex justify-center items-center">
-        <div className="light:shadow-lg rounded-md bg-slate-900 p-8 shadow-xl w-3/5">
-          <h1 className="font-bold text-3xl mb-10">Register</h1>
-          <div className="p-4">
-            <div className="mb-4">
-              <label className="font-bold">Email</label>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <label>Password</label>
-            </div>
-            <div>
-              <button>Login</button>
-              <a href="#">Forgot Password?</a>
-            </div>
-          </div>
+    <>
+      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
           <div>
-            <p>
-              Already have an account <a href="/login">Login</a>.
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="mx-auto h-12 w-uto"
+              viewBox="0 0 20 20"
+              fill="#00BFA6"
+            >
+              <path
+                fillRule="evenodd"
+                d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+              Register to CWE
+            </h2>
+            <p className="mt-2 text-center text-sm text-gray-600">
+              Already Have An Account?{" "}
+              <a
+                href="#"
+                className="font-medium text-[#00BFA6] hover:text-[#05d8bc]"
+              >
+                Sign In
+              </a>
             </p>
           </div>
+          <form className="mt-8 space-y-6" action="#" method="POST">
+            <input type="hidden" name="remember" defaultValue="true" />
+            <div className="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label htmlFor="email-address" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="email-address"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-[#00BFA6] focus:border-[#04a08c] focus:z-10 sm:text-sm"
+                  placeholder="Email address"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="sr-only">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-[#00BFA6] focus:border-[#00BFA6] focus:z-10 sm:text-sm"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  className="h-4 w-4 text-[#00BFA6] focus:ring-[#05d8bc] border-gray-300 rounded"
+                />
+                <label
+                  htmlFor="remember-me"
+                  className="ml-2 block text-sm text-gray-900"
+                >
+                  Remember me
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#05d8bc] hover:bg-[#07b69f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+                  <LockClosedIcon
+                    className="h-5 w-5 text-[#00BFA6] group-hover:text-[#05d8bc]"
+                    aria-hidden="true"
+                  />
+                </span>
+                Register
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    </body>
+    </>
   );
 }
